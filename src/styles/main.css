@@ -1985,6 +1985,9 @@ html:not(.has-hours) .hours-card {
 .past-hero .fab {
   transform: none;
 }
+.past-hero.in-planner .fab {
+  transform: translateY(140%);
+}
 .fab:hover {
   background: var(--btn-bg-hover);
 }

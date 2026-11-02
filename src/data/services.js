@@ -99,8 +99,8 @@ export const services = [
   {
     id: 'veredelung',
     title: 'Leinwand & Rahmen',
-    h: 'Leinenfotos auf Keilrahmen und Einrahmungen',
-    text: 'Leinenfotos auf Keilrahmen und Einrahmungen, damit Ihre Bilder an die Wand kommen.',
+    h: 'Leinwandfotos auf Keilrahmen und Einrahmungen',
+    text: 'Leinwandfotos auf Keilrahmen und Einrahmungen, damit Ihre Bilder an die Wand kommen.',
     img: 'studio:Studio-Verkauf',
     anchor: '#studio',
   },

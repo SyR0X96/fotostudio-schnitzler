@@ -320,6 +320,7 @@ html.has-wa .no-wa-only {
   gap: 8px;
 }
 .field > span,
+.field > label,
 .field legend {
   font-size: 13px;
   font-weight: 500;
@@ -351,6 +352,7 @@ html.has-wa .no-wa-only {
   box-shadow: 0 0 0 3px color-mix(in srgb, var(--platin) 35%, transparent);
 }
 .field.is-error input,
+.field.is-error select,
 .field.is-error textarea {
   border-color: #b3261e;
 }
@@ -360,6 +362,11 @@ html.has-wa .no-wa-only {
 }
 :root[data-theme='dark'] .field__error {
   color: #ff8a80;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme='light']) .field__error {
+    color: #ff8a80;
+  }
 }
 
 /* Auswahlkarten (Radio/Checkbox) */

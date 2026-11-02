@@ -117,6 +117,7 @@ function initScroll() {
     gsap.ticker.add((t) => lenis.raf(t * 1000));
     gsap.ticker.lagSmoothing(0);
     lenis.stop();
+    window.lenis = lenis; // der Planer scrollt beim Schrittwechsel darüber
   }
   document.addEventListener('click', (e) => {
     const a = e.target.closest('a[href^="#"]');
@@ -483,13 +484,15 @@ function initPlanner() {
     { rootMargin: '1000px 0px' }
   );
   io.observe($('#planer'));
+  // Schwebender Button weicht der Zusammenfassungsleiste des Planers aus
+  new IntersectionObserver(([e]) => document.body.classList.toggle('in-planner', e.isIntersecting), { rootMargin: '0px 0px -40% 0px' }).observe($('#planer'));
   document.addEventListener('click', async (e) => {
     const a = e.target.closest('[data-plan]');
     if (!a) return;
     e.preventDefault();
     closeMenu();
     if ($('.lightbox').open) $('.lightbox').close();
-    scrollToEl($('#planer'));
+    scrollToEl($('[data-planner]'), -110);
     const p = await loadPlanner();
     p?.preselect(a.dataset.plan);
   });
@@ -773,9 +776,17 @@ function initCursor() {
   const label = $('.cursor__label');
   const x = gsap.quickTo(el, 'x', { duration: 0.18, ease: 'power3' });
   const y = gsap.quickTo(el, 'y', { duration: 0.18, ease: 'power3' });
+  // Bis zur ersten Mausbewegung versteckt, sonst steht der Sucher oben links
+  document.body.classList.add('cursor-hidden');
+  let seen = false;
   window.addEventListener('pointermove', (e) => {
+    if (!seen) {
+      seen = true;
+      gsap.set(el, { x: e.clientX, y: e.clientY });
+    }
     x(e.clientX);
     y(e.clientY);
+    document.body.classList.remove('cursor-hidden');
   });
   document.addEventListener('pointerleave', () => document.body.classList.add('cursor-hidden'));
   document.addEventListener('pointerenter', () => document.body.classList.remove('cursor-hidden'));

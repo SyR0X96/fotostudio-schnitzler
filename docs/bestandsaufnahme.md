@@ -485,3 +485,58 @@ Was geändert: Zeitspannen mit Bis-Strich ohne Leerzeichen geschrieben, „und�
 12. **Bildrechte und Einwilligungen:** Liegen für die abgebildeten Personen Einwilligungen vor, dass ihre Fotos auf der neuen Website gezeigt werden dürfen? Das betrifft besonders Kinder, Hochzeiten und die Erotik-Galerie.
 13. **Impressum:** Ist Frau Müllenmeister Inhaberin, und in welcher Rechtsform wird das Studio geführt (zum Beispiel Einzelunternehmen)? Das brauchen wir für das neue Impressum.
 14. **Weitere Angaben (freiwillig):** Gibt es Angaben, die wir zusätzlich nennen dürfen, zum Beispiel seit wann es das Studio gibt? Auf der alten Seite stehen keine Jahreszahlen oder Kundenzahlen, und wir nennen solche Angaben nur, wenn sie von Ihnen kommen.
+15. **Gutscheine:** Bieten Sie Gutscheine für Shootings an? Die neue Seite hat dafür einen eigenen Abschnitt „Ein Shooting verschenken“ und einen Anlass im Shooting-Planer. Wenn nicht, blenden wir beides aus.
+
+---
+
+## 10. Neue Texte auf der Website (bitte ebenfalls freigeben)
+
+Diese Texte gab es auf der alten Seite nicht. Sie sind aus den Inhalten der alten Seite abgeleitet und enthalten keine neuen Behauptungen (keine Preise, Zeiten, Jahreszahlen oder Zusagen). Bitte lesen Sie sie wie die Texte in Abschnitt 8.
+
+### 10.1 Startbereich (Hero)
+
+- Leitsatz: „Ins rechte Licht gerückt.“ (aus „Sie ins rechte Licht rücken“ auf der Studio-Seite)
+- Unterzeile: „Klassische Lichtführung, aufmerksame Bildkomposition und Zeit für Sie: Portraits, Bewerbungsfotos und Passbilder in unserem Fotostudio.“
+
+### 10.2 Leistungen
+
+| Leistung | Text |
+|---|---|
+| Portrait & Schwarzweiß | Das exklusive, klassische Portrait im Studio, gern auch in Schwarzweiß. Unsere große Stärke. |
+| Bewerbungsfotos | Bewerbungsfotos auf gehobenem Niveau für Privatleute, Schauspieler, Künstler und Unternehmen. |
+| Passbilder | Biometrische Passbilder für Ihre Ausweisdokumente, direkt bei uns im Studio. |
+| Hochzeit | Brautpaar-Portraits und Reportagen vom großen Tag, auf Wunsch im individuell gestalteten Hochzeitsalbum. |
+| Familie & Kinder | Shootings mit der ganzen Familie, mit Kindern und Babys, entspannt und mit viel Zeit. |
+| Babybauch | Die Zeit der Schwangerschaft, festgehalten in ruhigem, klassischem Licht. |
+| Tiere | Ihr Liebling im Studio, allein oder gemeinsam mit Ihnen. |
+| Gruppen & Vereine | Vereine, Mannschaften und Gruppen, im Studio oder vor Ort. |
+| Reportagen vor Ort | Wir kommen zu Ihnen und begleiten Ihren Anlass mit der Kamera, am Ort Ihrer Wahl. |
+| Reproduktion & Retusche | Reproduktionen alter Fotos, sorgfältige Retusche und Bildveredelung. |
+| Leinwand & Rahmen | Leinwandfotos auf Keilrahmen und Einrahmungen, damit Ihre Bilder an die Wand kommen. |
+| Danksagungen & Alben | Danksagungen mit Foto und individuell gestaltete Hochzeitsalben. |
+
+### 10.3 So arbeiten wir (Ablauf)
+
+1. **Anfragen:** Rufen Sie an, schreiben Sie uns oder stellen Sie Ihr Shooting im Planer zusammen.
+2. **Beraten:** Wir beraten Sie gerne und ausführlich und entwickeln mit Ihnen Ideen für Ihre Bilder.
+3. **Fotografieren:** Im Studio oder am Ort Ihrer Wahl, mit klassischer Lichtführung und in entspannter Atmosphäre.
+4. **Retuschieren:** Zu unserer Arbeit gehört die sorgfältige Retusche Ihrer Bilder.
+5. **Veredeln:** Als Abzug, Leinwandfoto auf Keilrahmen, gerahmt, als Danksagung oder im Hochzeitsalbum.
+
+### 10.4 Häufige Fragen
+
+- **Brauche ich einen Termin?** Zu unseren Öffnungszeiten können Sie gerne vorbeikommen. Innerhalb und außerhalb dieser Zeiten sind wir nach Terminabsprache gerne für Sie da, auch am Wochenende. Einen Termin vereinbaren Sie am einfachsten telefonisch.
+- **Machen Sie biometrische Passbilder?** Ja, Pass- und Bewerbungsfotos gehören zu unserem Service.
+- **Fotografieren Sie auch außerhalb des Studios?** Ja. Reportagen am Ort Ihrer Wahl gehören zu unserem Service, zum Beispiel bei Hochzeiten oder für Gruppen und Vereine.
+- **Können Sie alte Fotos reproduzieren und retuschieren?** Ja. Wir fertigen Reproduktionen alter Fotos an und übernehmen Retusche und Bildveredelung. Bringen Sie die Vorlage einfach mit, oder schicken Sie uns über den Shooting-Planer vorab ein Foto davon.
+- **Fotografieren Sie auch in Schwarzweiß?** Sehr gerne. Das exklusive, klassische Portrait, besonders auch in Schwarzweiß, ist unsere Stärke.
+- **Was kostet ein Shooting?** Das hängt von Anlass, Umfang und Ihren Wünschen ab. Sprechen Sie uns gerne an, wir beraten Sie ausführlich.
+- **In welcher Form bekomme ich meine Bilder?** Ob Abzug, Leinwandfoto auf Keilrahmen, Einrahmung, Danksagung mit Foto oder individuell gestaltetes Hochzeitsalbum: Sprechen Sie uns an, wir beraten Sie gerne.
+- **Kann ich ein Shooting verschenken?** Gerne. Fragen Sie uns nach einem Gutschein. (nur, wenn Sie Gutscheine anbieten, Frage 15)
+
+### 10.5 Weitere Abschnitte
+
+- **Reproduktion & Retusche:** „Alte Fotos, behutsam erneuert. Wir fertigen Reproduktionen alter Fotos an und übernehmen Retuschearbeiten und Bildveredelung. Bringen Sie Ihre Vorlage einfach mit ins Studio. Im Shooting-Planer können Sie uns vorab ein Foto davon zusammen mit Ihrer Anfrage schicken.“ Daneben steht ein Vorher/Nachher-Schieber, bis zu Ihren Beispielen (Frage 6) als beschrifteter Platzhalter.
+- **Gutschein:** „Ein ganz persönliches Geschenk. Gut ausgeleuchtete Fotografien können ein ganz persönliches Geschenk sein. Fragen Sie uns nach einem Gutschein, zum Beispiel für ein Portrait, ein Familien- oder ein Babybauch-Shooting.“
+- **Boudoir-Hinweis:** „Nur für Erwachsene. Diese Galerie zeigt Akt- und Boudoir-Fotografie. Bitte bestätigen Sie, dass Sie mindestens 18 Jahre alt sind.“
+- **Shooting-Planer:** Auswahltexte und Hinweise im Planer (zum Beispiel „Termine auch außerhalb der Öffnungszeiten und am Wochenende nach Absprache.“). Die vorbereitete Nachricht beginnt mit „Guten Tag,“ und listet alle Angaben auf.
