@@ -130,6 +130,9 @@ function initScroll() {
     if (id === '#top') lenis ? lenis.scrollTo(0, { duration: 1.4 }) : window.scrollTo({ top: 0, behavior: reduced ? 'auto' : 'smooth' });
     else scrollToEl(target);
     history.replaceState(null, '', id);
+    // Fokus mitnehmen, damit Tab danach im Ziel weitergeht (Skip-Link, Menüpunkte)
+    if (!target.matches('a[href], button, input, select, textarea, [tabindex]')) target.setAttribute('tabindex', '-1');
+    target.focus({ preventScroll: true });
   });
 
   const header = $('.header');
@@ -563,7 +566,10 @@ function setGalleryFilter(id) {
   const sub = hz.subs.find((s) => s.id === id);
   const main = sub ? 'hochzeit' : id;
   const r = document.getElementById(`gf-${main}`);
-  if (!r) return;
+  if (!r) {
+    if (id !== 'alle') setGalleryFilter('alle');
+    return;
+  }
   r.checked = true;
   const rs = document.getElementById(`gfs-${sub ? sub.id : 'alle'}`);
   if (rs) rs.checked = true;
@@ -592,8 +598,12 @@ function initGallery() {
     boudoirOk = true;
     store.set('boudoir-ok', '1', 'sessionStorage');
     applyGallery();
+    $('.g-item[data-gated] .g-item__link')?.focus({ preventScroll: true });
   });
-  $('[data-gate-cancel]').addEventListener('click', () => setGalleryFilter('alle'));
+  $('[data-gate-cancel]').addEventListener('click', () => {
+    setGalleryFilter('alle');
+    $('#gf-alle').focus({ preventScroll: true });
+  });
 
   grid.addEventListener('click', (e) => {
     const a = e.target.closest('.g-item__link');
@@ -659,7 +669,7 @@ function showLb() {
   img.closest('.lightbox__mat').style.setProperty('--w', `${m.w}px`);
   $('[data-lb-cat]').textContent = label;
   $('[data-lb-count]').textContent = `${lb.i + 1} / ${lb.ids.length}`;
-  if (hasWa()) $('[data-lb-wa]').href = waLink(`Guten Tag, ich habe auf Ihrer Website ein Bild aus der Galerie „${label}“ gesehen (${id}) und interessiere mich für ein ähnliches Shooting.`);
+  if (hasWa()) $('[data-lb-wa]').href = waLink(`Guten Tag, ich habe auf Ihrer Website ein Bild aus der Galerie „${label}“ gesehen (Bild ${id.split('/')[1]}) und interessiere mich für ein ähnliches Shooting.`);
   const plan = $('[data-lb-plan]');
   if (OCCASION[cat]) plan.dataset.plan = OCCASION[cat];
   else plan.removeAttribute('data-plan');
@@ -681,14 +691,18 @@ function initLightbox() {
     lenis?.start();
     setZoom(1);
   });
-  box.addEventListener('click', (e) => e.target === stage && box.close());
+  // Schließen nur, wenn wirklich auf den dunklen Rand gedrückt und nicht gezogen wurde
+  let downOnStage = false, moved = false, lastType = 'mouse';
+  box.addEventListener('click', (e) => {
+    if (e.target === stage && downOnStage && !moved) box.close();
+  });
   box.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowRight') step(1);
     if (e.key === 'ArrowLeft') step(-1);
     if (e.key === '+' || e.key === '=') setZoom(Math.min(3, lb.scale + 0.5), lb.x, lb.y);
     if (e.key === '-') setZoom(Math.max(1, lb.scale - 0.5), lb.x, lb.y);
   });
-  stage.addEventListener('dblclick', () => setZoom(lb.scale > 1 ? 1 : 2));
+  stage.addEventListener('dblclick', () => lastType !== 'touch' && setZoom(lb.scale > 1 ? 1 : 2));
   stage.addEventListener('wheel', (e) => {
     e.preventDefault();
     setZoom(Math.min(3, Math.max(1, lb.scale - e.deltaY * 0.002)), lb.x, lb.y);
@@ -696,18 +710,26 @@ function initLightbox() {
 
   // Zeiger: Wischen (ohne Zoom), Verschieben (mit Zoom), Pinch (zwei Finger)
   const pts = new Map();
-  let start = null, pinch = null, lastTap = 0;
+  let start = null, pinch = null, pinched = false, lastTap = 0;
   stage.addEventListener('pointerdown', (e) => {
+    if (!pts.size) {
+      downOnStage = e.target === stage;
+      moved = false;
+      pinched = false;
+      lastType = e.pointerType;
+    }
     stage.setPointerCapture(e.pointerId);
     pts.set(e.pointerId, { x: e.clientX, y: e.clientY });
     if (pts.size === 2) {
       const [a, b] = [...pts.values()];
       pinch = { d: Math.hypot(a.x - b.x, a.y - b.y), s: lb.scale };
+      pinched = true;
     } else start = { x: e.clientX, y: e.clientY, lx: lb.x, ly: lb.y, t: Date.now() };
   });
   stage.addEventListener('pointermove', (e) => {
     if (!pts.has(e.pointerId)) return;
     pts.set(e.pointerId, { x: e.clientX, y: e.clientY });
+    if (start && Math.hypot(e.clientX - start.x, e.clientY - start.y) > 6) moved = true;
     if (pinch && pts.size === 2) {
       const [a, b] = [...pts.values()];
       setZoom(Math.min(3, Math.max(1, (pinch.s * Math.hypot(a.x - b.x, a.y - b.y)) / pinch.d)), lb.x, lb.y);
@@ -717,8 +739,17 @@ function initLightbox() {
   });
   const end = (e) => {
     pts.delete(e.pointerId);
+    if (pinch && pts.size === 1) {
+      // Nach dem Pinch verschiebt der verbleibende Finger ab seiner eigenen Position
+      const [r] = [...pts.values()];
+      start = { x: r.x, y: r.y, lx: lb.x, ly: lb.y, t: Date.now() };
+    }
     if (pts.size < 2) pinch = null;
     if (!start || pts.size) return;
+    if (pinched) {
+      start = null;
+      return;
+    }
     const dx = e.clientX - start.x, dy = e.clientY - start.y;
     if (lb.scale === 1 && Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy)) step(dx < 0 ? 1 : -1);
     else if (e.pointerType === 'touch' && Math.abs(dx) < 8 && Math.abs(dy) < 8) {

@@ -111,7 +111,12 @@ export class Planner {
   }
 
   ctx() {
-    return { occ: this.occ(), steps: this.activeIds(), files: this.files.length, occasions: this.occasions };
+    return { occ: this.occ(), steps: this.activeIds(), files: this.relevantFiles().length, occasions: this.occasions };
+  }
+
+  // Fotos zählen nur bei Reproduktion; wechselt der Anlass, hängen sie nicht an anderen Anfragen
+  relevantFiles() {
+    return this.occ()?.id === 'reproduktion' ? this.files : [];
   }
 
   details() {
@@ -802,10 +807,11 @@ export class Planner {
     const wa = this.q('[data-send-wa]');
     if (wa) wa.href = waLink(this.text('wa'));
     const attach = this.q('[data-attach]');
-    const n = this.files.length;
+    const files = this.relevantFiles();
+    const n = files.length;
     attach.hidden = !n;
     if (n) {
-      attach.innerHTML = `<ul class="planner__thumbs planner__thumbs--sm">${this.files.map((f) => `<li class="planner__thumb"><img src="${f.url}" alt="" /></li>`).join('')}</ul>
+      attach.innerHTML = `<ul class="planner__thumbs planner__thumbs--sm">${files.map((f) => `<li class="planner__thumb"><img src="${f.url}" alt="" /></li>`).join('')}</ul>
         <p>${hasWa() ? `Bitte hängen Sie ${n === 1 ? 'das Foto' : 'die Fotos'} im Chat oder in Ihrer E-Mail an.` : `Bitte hängen Sie ${n === 1 ? 'das Foto' : 'die Fotos'} in Ihrem E-Mail-Programm an.`} Aus Datenschutzgründen haben wir ${n === 1 ? 'es' : 'sie'} nicht hochgeladen, ${n === 1 ? 'es liegt' : 'sie liegen'} nur auf Ihrem Gerät.</p>`;
     }
   }
@@ -868,6 +874,8 @@ export class Planner {
       const p = new LightPreview(this.q('[data-canvas]'), { reduced: this.reduced, onLight: (az, el) => this.onLight(az, el), onInteract: () => this.q('[data-stage-hint]')?.classList.add('is-faded') });
       await p.init(this.mood());
       this.preview = p;
+      // Wurde während des Ladens die Stimmung gewechselt, jetzt nachziehen
+      p.setMood(this.mood());
       this.stage.classList.add('is-ready');
     } catch (err) {
       this.preview = null;
