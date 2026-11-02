@@ -1,0 +1,68 @@
+# Baut die Seite bei jedem Push auf main und stellt sie als Vorschau auf GitHub Pages bereit.
+# Einmalig nötig: Settings → Pages → Build and deployment → Source „GitHub Actions“.
+# Am Ende prüft der Live-Check über version.txt, ob wirklich der neue Stand ausgeliefert wird.
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Nie zwei Deploys gleichzeitig; kommt währenddessen ein neuer Stand, folgt er danach
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+env:
+  PAGES_URL: https://syr0x96.github.io/fotostudio-schnitzler/
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: '1'
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      # Vorschau: noindex kommt aus src/config.js (site.noindex)
+      - run: npm run build
+      - name: Build prüfen
+        run: |
+          test -f dist/index.html
+          test "$(cat dist/version.txt)" = "$GITHUB_SHA"
+          grep -q 'noindex' dist/index.html && echo "noindex aktiv (Vorschau)" || echo "::warning::noindex ist aus"
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5
+
+      - name: Live-Check
+        run: |
+          for i in $(seq 1 30); do
+            v=$(curl -fsS --connect-timeout 10 --max-time 20 -H 'Cache-Control: no-cache' "${PAGES_URL}version.txt?t=$(date +%s)" 2>/dev/null || true)
+            if [ "$v" = "$GITHUB_SHA" ]; then echo "Live auf $PAGES_URL ($v)"; exit 0; fi
+            echo "Noch nicht live (version.txt: '${v:-leer}'), warte …"
+            sleep 6
+          done
+          echo "::error::$PAGES_URL liefert nicht den neuen Stand ($GITHUB_SHA)."
+          exit 1
