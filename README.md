@@ -13,19 +13,19 @@ Alle Angaben stehen zentral in **`src/config.js`**. Leere Felder blenden den zug
 
 | Feld | Stand |
 |---|---|
-| `whatsapp` | **fehlt.** Leer = keine WhatsApp-Buttons, Anfragen laufen über E-Mail und Telefon. Mit Nummer (`49…` ohne `+` und ohne führende 0) wird WhatsApp überall zum Hauptweg. |
+| `whatsapp` | leer, das Studio hat kein WhatsApp (Antwort vom 02.11.2026). Anfragen laufen über E-Mail und Telefon. Käme später eine Nummer dazu (`49…` ohne `+` und ohne führende 0), würde WhatsApp überall zum Hauptweg. |
 | `phone`, `fax` | von der alten Seite (Impressum und Schild) |
-| `email` | vom Schild der Kontaktseite, bitte bestätigen |
+| `email` | vom Schild der Kontaktseite, am 02.11.2026 bestätigt |
 | `hours`, `hoursNote` | vom Schild, bitte bestätigen. Leeres Objekt `{}` blendet Öffnungszeiten und Live-Status aus. |
-| `prices` | leer = keine Preise. Schlüssel = Anlass im Planer, z. B. `passbild: 'ab 15 €'` |
+| `prices` | leer lassen: Auf die Seite sollen keine Preise (Antwort vom 02.11.2026) |
 | `voucher` | Gutschein-Abschnitt und Anlass „Gutschein“, bitte beim Kunden bestätigen |
-| `boudoir` | Erotik-Galerie als „Boudoir / Akt“ hinter Hinweis-Klick. `false` nimmt sie komplett heraus. |
+| `boudoir` | Erotik-Galerie als „Boudoir / Akt“ hinter Hinweis-Klick, bleibt laut Antwort vom 02.11.2026. `false` nimmt sie komplett heraus. |
 | `googleReviews`, `reviews` | leer = kein Bewertungsbereich. Nur echte Bewertungen eintragen. |
-| `beforeAfter` | leer = beschrifteter Platzhalter im Vorher/Nachher-Slider |
+| `beforeAfter` | leer = beschrifteter Platzhalter im Vorher/Nachher-Slider. Beispielpaare kommen vom Kunden. |
 | `legal.*` | Impressumsangaben der alten Seite. Die USt-IdNr hat 10 statt 9 Ziffern, bitte prüfen. |
 | `noindex` | `true` = Vorschau (Meta-Tag `noindex` in allen Seiten plus robots.txt mit `Disallow: /`). Für den Livegang `false`. Hinweis: Wirksam ist auf GitHub Pages vor allem das Meta-Tag, denn eine robots.txt unter `/fotostudio-schnitzler/` lesen Suchmaschinen nicht (sie gilt nur im Host-Root). |
 
-Impressum und Datenschutz (`impressum.html`, `datenschutz.html`) sind an die neue Technik angepasst, sollten aber rechtlich geprüft werden.
+Impressum und Datenschutz (`impressum.html`, `datenschutz.html`) sind an die neue Technik angepasst und am 02.11.2026 freigegeben. Beim Umzug auf den VPS muss Abschnitt 3 (Hosting) auf IONOS umgestellt werden.
 
 ## Befehle
 

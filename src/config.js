@@ -17,10 +17,10 @@ export const site = {
 
   // WhatsApp: nur Ziffern, mit Ländervorwahl, ohne + und ohne 0 (0171 2345678 → '491712345678').
   // Leer = alle WhatsApp-Buttons sind ausgeblendet, Anfragen laufen über E-Mail und Telefon.
-  // OFFEN: Nummer steht nicht auf der alten Seite (Frage an den Kunden).
+  // Stand 02.11.2026: Das Studio hat kein WhatsApp.
   whatsapp: '',
 
-  // Telefon und E-Mail: aus Impressum und Schild der alten Seite (E-Mail bitte bestätigen)
+  // Telefon und E-Mail: aus Impressum und Schild der alten Seite (E-Mail am 02.11.2026 bestätigt)
   phone: '02233 33371',
   phoneIntl: '+49 2233 33371',
   fax: '02233 933692',
@@ -53,7 +53,7 @@ export const site = {
   },
   hoursNote: 'Innerhalb und außerhalb dieser Zeiten sind wir nach Terminabsprache gerne für Sie da, auch am Wochenende.',
 
-  // Preise: nur eintragen, wenn der Kunde sie liefert. Leer = keine Preise auf der Seite.
+  // Preise: Stand 02.11.2026 sollen keine Preise auf die Seite. Leer lassen = keine Preise.
   // Schlüssel = Anlass-id aus dem Shooting-Planer (z. B. passbild: 'ab 15 €').
   prices: {},
 
@@ -61,10 +61,10 @@ export const site = {
   voucher: true,
 
   // Erotik-Galerie der alten Seite als „Boudoir / Akt“ hinter einem Hinweis-Klick (ab 18).
-  // false = Kategorie komplett von der Seite nehmen. OFFEN: Will der Kunde sie überhaupt?
+  // false = Kategorie komplett von der Seite nehmen. Stand 02.11.2026: Galerie bleibt.
   boudoir: true,
 
-  // Impressum (Angaben der alten Seite, rechtlich prüfen lassen)
+  // Impressum (Angaben der alten Seite, Impressum und Datenschutz am 02.11.2026 freigegeben)
   legal: {
     company: 'Fotostudio Schnitzler',
     owner: 'Aenni Müllenmeister',

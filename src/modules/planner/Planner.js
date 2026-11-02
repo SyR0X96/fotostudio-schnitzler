@@ -229,7 +229,7 @@ export class Planner {
     const extras = this.shell(
       step('extras'),
       `<div class="planner__choices planner__choices--2" data-extras></div>
-      <p class="planner__note">Ganz unverbindlich. Möglichkeiten und Preise besprechen wir gern persönlich.</p>`,
+      <p class="planner__note">Ganz unverbindlich. Alle Möglichkeiten besprechen wir gern persönlich.</p>`,
       'Ich interessiere mich für …'
     );
 

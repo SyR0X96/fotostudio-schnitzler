@@ -5,7 +5,7 @@
 - Alte Seite: https://fotostudio-schnitzler.de (Joomla mit YOOtheme, Galerien mit Phoca Gallery)
 - Stand: 2. November 2026
 
-Dieses Dokument hält fest, was auf der bisherigen Website steht, was wir davon für die neue Seite übernehmen und welche Angaben wir noch von Ihnen brauchen. Die Fragen an Sie sind in Abschnitt 9 gesammelt.
+Dieses Dokument hält fest, was auf der bisherigen Website steht, was wir davon für die neue Seite übernehmen und welche Angaben wir noch von Ihnen brauchen. Die Fragen an Sie sind in Abschnitt 9 gesammelt, erste Antworten vom 2. November 2026 sind dort vermerkt.
 
 ---
 
@@ -472,18 +472,24 @@ Was geändert: Zeitspannen mit Bis-Strich ohne Leerzeichen geschrieben, „und�
 ## 9. Offene Fragen an Sie
 
 1. **Kontaktdaten:** Haben Sie eine WhatsApp-Nummer, über die Kunden Sie erreichen sollen? Ist die Festnetznummer 02233 33371 WhatsApp-fähig, oder gibt es eine Mobilnummer dafür? Ist die E-Mail-Adresse foto-schnitzler@web.de richtig und aktuell? Wird das Fax 02233 933692 noch genutzt? Gibt es Profile in sozialen Netzwerken (zum Beispiel Facebook oder Instagram), die wir verlinken sollen?
+   **Antwort (02.11.2026):** Die E-Mail-Adresse stimmt. WhatsApp gibt es nicht, Anfragen laufen über E-Mail und Telefon. Fax und soziale Netzwerke sind noch offen.
 2. **Öffnungszeiten:** Stimmen die Zeiten vom Schild (Dienstag, Mittwoch und Freitag 10–12 Uhr und 15–18 Uhr, Donnerstag 10–13 Uhr, sonst nach Terminabsprache, auch am Wochenende)? Ist Montag geschlossen?
 3. **Preise:** Sollen auf der neuen Seite Preise stehen, zum Beispiel für Passbilder, Bewerbungsfotos oder Shootings? Wenn ja, welche, und als feste Preise oder als „ab“-Preise?
+   **Antwort (02.11.2026):** Keine Preise auf der Seite. Die FAQ-Frage zu den Kosten ist entfernt.
 4. **Erotik-Galerie:** Auf der alten Seite gab es die Galerie „Erotik“ mit 20 Bildern. Soll sie auf der neuen Seite wieder erscheinen? Vorgesehen wäre sie unter dem Namen „Boudoir“.
+   **Antwort (02.11.2026):** Ja, die Galerie bleibt (als „Boudoir / Akt“ hinter dem Hinweis ab 18). Die Einwilligungen der Abgebildeten (Frage 12) sind noch zu klären.
 5. **Bessere Bilddateien:** Können Sie uns die Originaldateien der Bilder in voller Auflösung schicken, zuerst die in Abschnitt 7 aufgeführten? Die Fassungen von der alten Seite sind höchstens 306 px hoch und für die großen Flächen der neuen Seite zu klein.
 6. **Vorher/Nachher-Beispiele:** Haben Sie Beispiele für Retusche und für die Reproduktion alter Fotos (jeweils das Ausgangsbild und das Ergebnis), die wir zeigen dürfen?
+   **Antwort (02.11.2026):** Ja. Bis die Beispielpaare da sind, zeigt die Seite einen beschrifteten Platzhalter.
 7. **Freigabe der Texte:** Sind Sie mit den überarbeiteten Texten in Abschnitt 8 einverstanden, oder möchten Sie etwas ändern?
 8. **Logo und Name:** Haben Sie ein Logo als Vektordatei (zum Beispiel SVG, EPS, PDF oder AI)? Oder wünschen Sie einen reinen Schriftzug? Und welche Schreibweise des Namens soll gelten: „Fotostudio Schnitzler“ oder „Foto Schnitzler“?
+   **Antwort (02.11.2026):** Ein Logo als Vektordatei liegt nicht vor. Es bleibt beim Schriftzug „Foto Schnitzler“ mit dem Blenden-Symbol. Die Schreibweise des Namens ist noch offen.
 9. **USt-IdNr:** Bitte prüfen Sie die Umsatzsteuer-Identifikationsnummer. Im Impressum steht „DE 2218338861“, das sind 10 Ziffern; deutsche Nummern haben 9.
 10. **Neue Studiofotos:** Die drei Fotos der Studioräume sind nur 650 px breit und tragen einen eingebrannten Schriftzug. Können Sie uns neue Fotos der Räume ohne Schriftzug und in voller Auflösung schicken?
 11. **Google-Bewertungen:** Haben Sie ein Google-Unternehmensprofil? Dann brauchen wir den Link zu Ihren Bewertungen. Gibt es außerdem Kundenstimmen, die wir mit Erlaubnis der Kunden zitieren dürfen?
 12. **Bildrechte und Einwilligungen:** Liegen für die abgebildeten Personen Einwilligungen vor, dass ihre Fotos auf der neuen Website gezeigt werden dürfen? Das betrifft besonders Kinder, Hochzeiten und die Erotik-Galerie.
 13. **Impressum:** Ist Frau Müllenmeister Inhaberin, und in welcher Rechtsform wird das Studio geführt (zum Beispiel Einzelunternehmen)? Das brauchen wir für das neue Impressum.
+   **Antwort (02.11.2026):** Impressum und Datenschutz passen so.
 14. **Weitere Angaben (freiwillig):** Gibt es Angaben, die wir zusätzlich nennen dürfen, zum Beispiel seit wann es das Studio gibt? Auf der alten Seite stehen keine Jahreszahlen oder Kundenzahlen, und wir nennen solche Angaben nur, wenn sie von Ihnen kommen.
 15. **Gutscheine:** Bieten Sie Gutscheine für Shootings an? Die neue Seite hat dafür einen eigenen Abschnitt „Ein Shooting verschenken“ und einen Anlass im Shooting-Planer. Wenn nicht, blenden wir beides aus.
 
@@ -530,7 +536,6 @@ Diese Texte gab es auf der alten Seite nicht. Sie sind aus den Inhalten der alte
 - **Fotografieren Sie auch außerhalb des Studios?** Ja. Reportagen am Ort Ihrer Wahl gehören zu unserem Service, zum Beispiel bei Hochzeiten oder für Gruppen und Vereine.
 - **Können Sie alte Fotos reproduzieren und retuschieren?** Ja. Wir fertigen Reproduktionen alter Fotos an und übernehmen Retusche und Bildveredelung. Bringen Sie die Vorlage einfach mit, oder schicken Sie uns über den Shooting-Planer vorab ein Foto davon.
 - **Fotografieren Sie auch in Schwarzweiß?** Sehr gerne. Das exklusive, klassische Portrait, besonders auch in Schwarzweiß, ist unsere Stärke.
-- **Was kostet ein Shooting?** Das hängt von Anlass, Umfang und Ihren Wünschen ab. Sprechen Sie uns gerne an, wir beraten Sie ausführlich.
 - **In welcher Form bekomme ich meine Bilder?** Ob Abzug, Leinwandfoto auf Keilrahmen, Einrahmung, Danksagung mit Foto oder individuell gestaltetes Hochzeitsalbum: Sprechen Sie uns an, wir beraten Sie gerne.
 - **Kann ich ein Shooting verschenken?** Gerne. Fragen Sie uns nach einem Gutschein. (nur, wenn Sie Gutscheine anbieten, Frage 15)
 
