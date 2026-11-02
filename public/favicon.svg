@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+<rect width="64" height="64" rx="14.08" fill="#0e0e0d"/>
+<clipPath id="o"><circle cx="32" cy="32" r="25.6"/></clipPath>
+<g clip-path="url(#o)"><path d="M32.00 22.40 L82.74 46.84 L107.18 -3.91 L56.44 -28.34Z" fill="#d8ccb6" fill-opacity="0.55" stroke="#0e0e0d" stroke-width="0.77"/><path d="M39.51 26.01 L52.04 80.92 L106.95 68.39 L94.41 13.48Z" fill="#d8ccb6" fill-opacity="0.70" stroke="#0e0e0d" stroke-width="0.77"/><path d="M41.36 34.14 L6.24 78.17 L50.28 113.28 L85.39 69.25Z" fill="#d8ccb6" fill-opacity="0.85" stroke="#0e0e0d" stroke-width="0.77"/><path d="M36.17 40.65 L-20.15 40.65 L-20.15 96.97 L36.17 96.97Z" fill="#d8ccb6" fill-opacity="0.55" stroke="#0e0e0d" stroke-width="0.77"/><path d="M27.83 40.65 L-7.28 -3.38 L-51.31 31.73 L-16.20 75.76Z" fill="#d8ccb6" fill-opacity="0.70" stroke="#0e0e0d" stroke-width="0.77"/><path d="M22.64 34.14 L35.17 -20.77 L-19.73 -33.30 L-32.27 21.60Z" fill="#d8ccb6" fill-opacity="0.85" stroke="#0e0e0d" stroke-width="0.77"/><path d="M24.49 26.01 L75.24 1.58 L50.80 -49.16 L0.06 -24.73Z" fill="#d8ccb6" fill-opacity="0.55" stroke="#0e0e0d" stroke-width="0.77"/></g>
+<circle cx="32" cy="32" r="25.6" fill="none" stroke="#d8ccb6" stroke-width="1.92"/>
+</svg>
