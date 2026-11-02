@@ -335,12 +335,14 @@ function initReveals() {
   // Wörter „stellen scharf“: --f steuert Unschärfe und Farbe in CSS, damit hell/dunkel live mitgeht
   gsap.fromTo(words, { '--f': 0 }, { '--f': 1, stagger: 0.06, ease: 'none', scrollTrigger: { trigger: '[data-words]', start: 'top 82%', end: 'bottom 48%', scrub: true } });
 
-  const sel = '.section-head > *, .pillars li, .statement__text > *, .svc, .process__list li, .faq__list details, .channel, .print, .hours-card, .map, .voucher__card, .voucher__text > *, .retouch__text > *, .ba__item, .studio__text > *';
+  // Überschriften (.h-1) haben ihren eigenen Clip-Reveal weiter unten und sind hier ausgenommen.
+  // overwrite 'auto' statt true: true hätte jede andere Animation am selben Element abgebrochen.
+  const sel = '.section-head > :not(.h-1), .pillars li, .statement__text > *, .svc, .process__list li, .faq__list details, .channel, .print, .hours-card, .map, .voucher__card, .voucher__text > :not(.h-1), .retouch__text > :not(.h-1), .ba__item, .studio__text > *';
   gsap.set(sel, { opacity: 0 });
   ScrollTrigger.batch(sel, {
     start: 'top 90%',
     once: true,
-    onEnter: (els) => gsap.fromTo(els, { y: 46, opacity: 0 }, { y: 0, opacity: 1, duration: 1.1, stagger: 0.07, ease: 'power3.out', overwrite: true }),
+    onEnter: (els) => gsap.fromTo(els, { y: 46, opacity: 0 }, { y: 0, opacity: 1, duration: 1.1, stagger: 0.07, ease: 'power3.out', overwrite: 'auto' }),
   });
 
   $$('.h-1').forEach((h) => {
