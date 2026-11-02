@@ -250,7 +250,8 @@ html.has-wa .no-wa-only {
   line-height: 1.2;
   text-decoration: none;
   white-space: nowrap;
-  transition: background-color 0.35s var(--ease), color 0.35s var(--ease), border-color 0.35s var(--ease), transform 0.35s var(--ease);
+  /* kein transform hier: GSAP bewegt die Buttons (Intro, magnetisch) */
+  transition: background-color 0.35s var(--ease), color 0.35s var(--ease), border-color 0.35s var(--ease);
 }
 .btn:hover {
   --b-line: var(--ink);

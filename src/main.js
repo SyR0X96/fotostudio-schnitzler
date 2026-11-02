@@ -296,7 +296,8 @@ function heroIntro() {
   // Ohne Transparenz: Texte stellen scharf, damit der Kontrast zu jedem Zeitpunkt stimmt
   gsap.from('.hero__lead, .hero__ctas > *', { y: 24, filter: 'blur(8px)', duration: 1.1, stagger: 0.08, ease: 'power3.out', delay: 0.1, clearProps: 'filter' });
   gsap.from('.hero__meta > *', { y: 14, filter: 'blur(6px)', duration: 1, stagger: 0.06, ease: 'power3.out', delay: 0.25, clearProps: 'filter' });
-  gsap.from('.header', { yPercent: -100, duration: 1, ease: 'power3.out', delay: 0.2 });
+  // Nur die Inhalte: Der Header selbst hat eine CSS-Transition auf transform (Ein-/Ausblenden), die sich mit GSAP beißt
+  gsap.from('.header > *', { y: -18, filter: 'blur(6px)', duration: 1, stagger: 0.06, ease: 'power3.out', delay: 0.2, clearProps: 'transform,filter' });
 }
 
 // ---------------------------------------------------------------------------
