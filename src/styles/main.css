@@ -722,9 +722,14 @@ html:not(.has-webgl) .hero__hint {
   border-radius: 50%;
 }
 
-/* Wort-für-Wort */
+/* Wort für Wort scharfstellen (main.js setzt --f von 0 bis 1). Bei 0 bleibt der Kontrast lesbar. */
 .w {
-  transition: opacity 0.2s;
+  --f: 1;
+  color: color-mix(in srgb, var(--ink) calc(var(--f) * 100%), var(--ink-3));
+  filter: blur(calc((1 - var(--f)) * 5px));
+}
+em .w {
+  color: color-mix(in srgb, var(--platin-ink) calc(var(--f) * 100%), var(--ink-3));
 }
 
 /* ---------- Leistungen ---------- */

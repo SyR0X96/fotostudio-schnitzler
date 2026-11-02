@@ -137,7 +137,8 @@ function initScroll() {
   const onScroll = () => {
     const y = window.scrollY;
     const vh = window.innerHeight;
-    const threshold = heroEl.classList.contains('has-iris') ? heroEl.offsetHeight - vh * 1.12 : vh * 0.6;
+    // Mit Blende: früh umschalten, weil die Lamellen die Ecken (und damit den Header) zuerst bedecken
+    const threshold = vh * (heroEl.classList.contains('has-iris') ? 0.3 : 0.6);
     document.body.classList.toggle('past-hero', y > threshold);
     header.classList.toggle('is-hidden', y > vh * 1.8 && y > lastY + 2 && !document.body.classList.contains('menu-open'));
     if (y < lastY - 2) header.classList.remove('is-hidden');
@@ -291,8 +292,10 @@ async function preload() {
 
 function heroIntro() {
   if (reduced) return;
-  gsap.from('.hero__lead, .hero__ctas > *', { y: 24, opacity: 0, duration: 1.1, stagger: 0.08, ease: 'power3.out', delay: 0.1 });
-  gsap.from('.hero__meta > *, .header', { opacity: 0, y: -10, duration: 1, stagger: 0.06, ease: 'power3.out', delay: 0.25 });
+  // Ohne Transparenz: Texte stellen scharf, damit der Kontrast zu jedem Zeitpunkt stimmt
+  gsap.from('.hero__lead, .hero__ctas > *', { y: 24, filter: 'blur(8px)', duration: 1.1, stagger: 0.08, ease: 'power3.out', delay: 0.1, clearProps: 'filter' });
+  gsap.from('.hero__meta > *', { y: 14, filter: 'blur(6px)', duration: 1, stagger: 0.06, ease: 'power3.out', delay: 0.25, clearProps: 'filter' });
+  gsap.from('.header', { yPercent: -100, duration: 1, ease: 'power3.out', delay: 0.2 });
 }
 
 // ---------------------------------------------------------------------------
@@ -324,8 +327,8 @@ function splitWords(el) {
 function initReveals() {
   if (reduced) return;
   const words = splitWords($('[data-words]'));
-  // Wörter „stellen scharf“: von unscharf und gedämpft (Kontrast bleibt lesbar) zu scharf
-  gsap.fromTo(words, { color: 'var(--ink-3)', filter: 'blur(5px)' }, { color: 'var(--ink)', filter: 'blur(0px)', stagger: 0.06, ease: 'none', scrollTrigger: { trigger: '[data-words]', start: 'top 82%', end: 'bottom 48%', scrub: true } });
+  // Wörter „stellen scharf“: --f steuert Unschärfe und Farbe in CSS, damit hell/dunkel live mitgeht
+  gsap.fromTo(words, { '--f': 0 }, { '--f': 1, stagger: 0.06, ease: 'none', scrollTrigger: { trigger: '[data-words]', start: 'top 82%', end: 'bottom 48%', scrub: true } });
 
   const sel = '.section-head > *, .pillars li, .statement__text > *, .svc, .process__list li, .faq__list details, .channel, .print, .hours-card, .map, .voucher__card, .voucher__text > *, .retouch__text > *, .ba__item, .studio__text > *';
   gsap.set(sel, { opacity: 0 });

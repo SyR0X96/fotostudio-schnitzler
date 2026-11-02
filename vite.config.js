@@ -304,6 +304,8 @@ export default defineConfig({
   build: {
     target: 'es2020',
     assetsInlineLimit: 0,
+    // three.js (~570 kB) lädt nur nach, wenn Hero oder Lichtvorschau es brauchen
+    chunkSizeWarningLimit: 700,
     rollupOptions: {
       input: {
         main: resolve(root, 'index.html'),
