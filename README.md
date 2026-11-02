@@ -23,7 +23,7 @@ Alle Angaben stehen zentral in **`src/config.js`**. Leere Felder blenden den zug
 | `googleReviews`, `reviews` | leer = kein Bewertungsbereich. Nur echte Bewertungen eintragen. |
 | `beforeAfter` | leer = beschrifteter Platzhalter im Vorher/Nachher-Slider |
 | `legal.*` | Impressumsangaben der alten Seite. Die USt-IdNr hat 10 statt 9 Ziffern, bitte prüfen. |
-| `noindex` | `true` = Vorschau (Meta-Tag und robots.txt sperren Suchmaschinen). Für den Livegang `false`. |
+| `noindex` | `true` = Vorschau (Meta-Tag `noindex` in allen Seiten plus robots.txt mit `Disallow: /`). Für den Livegang `false`. Hinweis: Wirksam ist auf GitHub Pages vor allem das Meta-Tag, denn eine robots.txt unter `/fotostudio-schnitzler/` lesen Suchmaschinen nicht (sie gilt nur im Host-Root). |
 
 Impressum und Datenschutz (`impressum.html`, `datenschutz.html`) sind an die neue Technik angepasst, sollten aber rechtlich geprüft werden.
 
